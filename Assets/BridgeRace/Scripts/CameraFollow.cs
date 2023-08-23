@@ -5,10 +5,16 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
-    // Update is called once per frame
-    void FixedUpdate()
+    public Vector3 offset;
+    private void Start()
     {
-        transform.position = target.position;
+        offset = transform.position - target.position;
     }
-   
+
+
+    // Update is called once per frame
+    void LateUpdate()
+    {
+        transform.position = target.position + offset;
+    }
 }

@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CharacterMovement : Character
+public class BotMovement : Character
 {
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        float xLeftRight = Input.GetAxis("Horizontal");
-        float zForwardbackward = Input.GetAxis("Vertical");
+        float xLeftRight = Random.Range(-1, 1);
+        float zForwardbackward = Random.Range(-1, 1);
         if (xLeftRight != 0)
         {
             myRb.AddTorque(Vector3.up * rotateSpeed, ForceMode.Force);
