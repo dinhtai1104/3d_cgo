@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
     public float rotateSpeed = 10;
     public BagBrick bag;
     public Rigidbody myRb;
+    public Animator animator;
 
 
     public void XayCau()
