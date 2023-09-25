@@ -9,11 +9,11 @@ public class BotMovement : Character
 
         if (zForwardbackward != 0)
         {
-            animator.SetFloat("velocity", 1);
+            animator.SetFloat(velocityParameter, 1);
         }
         else
         {
-            animator.SetFloat("velocity", 0);
+            animator.SetFloat(velocityParameter, 0);
         }
 
         var nextPos = transform.position + transform.forward * zForwardbackward * speed * Time.deltaTime + transform.right * xLeftRight * speed * Time.deltaTime;

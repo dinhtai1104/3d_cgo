@@ -12,11 +12,11 @@ public class CharacterMovement : Character
         float zForwardbackward = joystickInput.Vertical;
         if (zForwardbackward != 0)
         {
-            animator.SetFloat("velocity", 1);
+            animator.SetFloat(velocityParameter, 1);
         }
         else
         {
-            animator.SetFloat("velocity", 0);
+            animator.SetFloat(velocityParameter, 0);
         }
 
         var direction = new Vector3(joystickInput.Horizontal, 0, joystickInput.Vertical).normalized;

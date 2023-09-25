@@ -8,6 +8,8 @@ public class Character : MonoBehaviour
     public BagBrick bag;
     public Rigidbody myRb;
     public Animator animator;
+    protected string velocityParameter = "velocity";
+    private string TAG_BRICK = "Brick";
 
 
     public void XayCau()
@@ -15,7 +17,7 @@ public class Character : MonoBehaviour
     }
     private void OnTriggerEnter(Collider otherObject)
     {
-        if (otherObject.CompareTag("Brick"))
+        if (otherObject.CompareTag(TAG_BRICK))
         {
             var brick = otherObject.GetComponent<Brick>();
             if (brick != null)

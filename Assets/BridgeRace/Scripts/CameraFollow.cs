@@ -6,8 +6,10 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform target;
     public Vector3 offset;
+    private Transform transformCached;
     private void Start()
     {
+        transformCached = transform;
         offset = transform.position - target.position;
     }
 
@@ -15,6 +17,6 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = target.position + offset;
+        transformCached.position = target.position + offset;
     }
 }
